@@ -46,7 +46,7 @@ class Resource(models.Model):
         resourcedescription=models.TextField()
 
         def __str__(self):
-            return self.resourceuserid
+            return self.resourcename
         
         class Meta:
             db_table='resource'

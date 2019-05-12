@@ -6,3 +6,8 @@ urlpatterns=[
     path('', views.index, name='index'), 
 
 ]
+
+urlpatterns=[
+    path('', views.index, name='index'),
+    path('gettypes/', views.gettypes, name='types'),
+]
