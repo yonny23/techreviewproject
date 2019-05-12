@@ -11,21 +11,21 @@ class MeetingType(models.Model):
         return self.meetingtypename 
 
     class Meta(): 
-        db_table='meetingtype'
-        verbose_name_plural='meetingtypes'
+        db_table='meeting type'
+        verbose_name_plural='meeting types'
 
-    class MeetingMeet(models.Model):
-        meetingmeettitle=models.CharField(max_length=255)
-        meetingmeetdate =models.DateField()
-        meetingmeettime=models.TimeField()
-        meetingmeetlocation=models.TextField()
-        meetingmeetagenda=models.TextField()
+class Greet(models.Model):
+        greettitle=models.CharField(max_length=255)
+        greetdate =models.DateField()
+        greettime=models.TimeField()
+        greetlocation=models.TextField()
+        greetagenda=models.TextField()
 
         class Meta:
-            db_table='meeting'
-            verbose_name_plural='meetings' 
+            db_table='greet'
+            verbose_name_plural='greetings' 
     
-    class MeetingMinute(models.Model):
+class MeetingMinute(models.Model):
         meetingid=models.ForeignKey
         meetingattendance=models.ManyToManyField(User)
         meetingminutes=models.TextField()
@@ -37,7 +37,7 @@ class MeetingType(models.Model):
             db_table='meetingminute'
 
 
-    class Resource(models.Model):
+class Resource(models.Model):
         resourcename=models.CharField(max_length=255) 
         resourcetype=models.TextField()
         resourceurl=models.URLField(null=True, blank=True)
@@ -52,7 +52,7 @@ class MeetingType(models.Model):
             db_table='resource'
     
 
-    class Event(models.Model):
+class Event(models.Model):
         eventtitle=models.CharField(max_length=255) 
         eventlocation=models.TextField()
         eventtime=models.TimeField()
@@ -65,6 +65,3 @@ class MeetingType(models.Model):
         
         class Meta:
             db_table='event'
-
-
-
