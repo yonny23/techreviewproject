@@ -10,4 +10,7 @@ urlpatterns=[
 urlpatterns=[
     path('', views.index, name='index'),
     path('gettypes/', views.gettypes, name='types'),
+    path('getevents/', views.getevents, name='events'),
+    path("<eventdetails_id/eventdetails>", views.eventdetails, name="eventdetails"),
+    
 ]

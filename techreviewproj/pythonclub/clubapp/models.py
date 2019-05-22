@@ -61,7 +61,7 @@ class Event(models.Model):
         eventdescription=models.TextField()
 
         def __str__(self):
-            return self.eventuserid
+            return self.eventtitle
         
         class Meta:
             db_table='event'
