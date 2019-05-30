@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{ e.eventdetails }}</h2>
-<p>Title: {{ e.eventtitle }}</p>
-<p>Location: {{ e.eventlocation }} </p>
-<p>Time: {{ e.eventtime }}</p>
-<p>Date: {{ e.eventdate }}</p>
-<p>User: {{ e.eventuserid }}</p>
-<p>Description: {{ e.eventdescription }}</p>
+<p>Title: {{ event.eventtitle }}</p>
+<p>Location: {{ event.eventlocation }} </p>
+<p>Time: {{ event.eventtime }}</p>
+<p>Date: {{ event.eventdate }}</p>
+<p>Description: {{ event.eventdescription }}</p>
 
 
 {% endblock %}

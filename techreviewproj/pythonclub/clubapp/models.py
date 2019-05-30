@@ -31,7 +31,7 @@ class MeetingMinute(models.Model):
         meetingminutes=models.TextField()
 
         def __str__(self):
-            return self.meetingid
+            return self.meetingminutes
         
         class Meta:
             db_table='meetingminute'
@@ -57,7 +57,6 @@ class Event(models.Model):
         eventlocation=models.TextField()
         eventtime=models.TimeField()
         eventdate=models.DateField()
-        eventuserid=models.ForeignKey
         eventdescription=models.TextField()
 
         def __str__(self):
