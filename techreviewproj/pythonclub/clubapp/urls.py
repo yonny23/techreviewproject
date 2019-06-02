@@ -12,5 +12,7 @@ urlpatterns=[
     path('gettypes/', views.gettypes, name='types'),
     path('getevents/', views.getevents, name='events'),
     path('eventdetails/<int:id>', views.eventdetails, name='eventdetails'),
+    path('newResource/', views.newResource, name='newresource'),
+    path('newGreet/', views.newGreet, name='newgreet'),
     
 ]

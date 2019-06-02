@@ -2,6 +2,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User 
 from .models import MeetingType, Greet, MeetingMinute, Resource, Event
 from django.shortcuts import get_object_or_404, render
+from .forms import ResourceForm, GreetForm
 
 
 # Create your views here.
@@ -23,6 +24,34 @@ def eventdetails(request, id):
         'event' : vents,
     }
     return render(request, 'clubapp/eventdetails.html', context=context)
+
+def newResource(request):
+    form=ResourceForm
+    if request.method=='POST':
+        form=ResourceForm(request.POST)
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=ResourceForm()
+    else:
+        form=ResourceForm()
+    return render(request, 'clubapp/newresource.html', {'form': form})
+
+
+def newGreet(request):
+    form=GreetForm
+    if request.method=='POST':
+        form=GreetForm(request.POST)
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=GreetForm()
+    else:
+        form=GreetForm()
+    return render(request, 'clubapp/newgreet.html', {'form': form})
+
+
+
 
     
 
