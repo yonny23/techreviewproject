@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from .models import MeetingType, Greet, MeetingMinute, Resource, Event
 from django.shortcuts import get_object_or_404, render
 from .forms import ResourceForm, GreetForm
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -49,6 +49,24 @@ def newGreet(request):
     else:
         form=GreetForm()
     return render(request, 'clubapp/newgreet.html', {'form': form})
+def loginmessage(request):
+    return render(request, 'clubapp/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'clubapp/logoutmessage.html')
+
+@login_required
+def newGreet(request):
+     form=GreetForm
+     if request.method=='POST':
+          form=GreetForm(request.POST)
+          if form.is_valid():
+               post=form.save(commit=True)
+               post.save()
+               form=GreetForm()
+     else:
+          form=GreetForm()
+     return render(request, 'clubapp/newgreet.html', {'form': form})
 
 
 
