@@ -15,7 +15,7 @@ urlpatterns=[
     path('eventdetails/<int:id>', views.eventdetails, name='eventdetails'),
     path('newResource/', views.newResource, name='newresource'),
     path('newGreet/', views.newGreet, name='newgreet'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('newGreets/', views.newGreets, name='newgreets'),
     path('loginmessage/', views.loginmessage, name='loginmessage'),
     path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
     

@@ -50,13 +50,13 @@ def newGreet(request):
         form=GreetForm()
     return render(request, 'clubapp/newgreet.html', {'form': form})
 def loginmessage(request):
-    return render(request, 'clubapp/loginmessage.html')
+    return render(request, 'clubapp/login.html')
 
 def logoutmessage(request):
-    return render(request, 'clubapp/logoutmessage.html')
+    return render(request, 'clubapp/logout.html')
 
 @login_required
-def newGreet(request):
+def newGreets(request):
      form=GreetForm
      if request.method=='POST':
           form=GreetForm(request.POST)

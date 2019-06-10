@@ -36,6 +36,18 @@ class EventTypeTest(TestCase):
 
     def test_table(self):
        self.assertEqual(str(MeetingMinute._meta.db_table), 'meetingminute')
+   
+    def test_table(self):
+       self.assertEqual(str)
+   
+    def test_string(self):
+       type=Event(eventtitle="The Goat")
+       self.assertEqual(str(type), type.eventtitle)
+   
+    def test_table(self):
+       self.assertEqual(str(Event._meta.db_table), 'event')
+   
+
 
     
 
